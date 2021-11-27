@@ -1,0 +1,14 @@
+<div class="pagination-component-container">
+    <button type="button" (click)="firstClickHandler()" [disabled]="config.isFirstPageDisabled()">
+        First
+    </button>
+    <button type="button" (click)="previousClickHandler()" [disabled]="config.isPreviousPageDisabled()">
+        Previous
+    </button>
+    <button type="button" (click)="nextClickHandler()" [disabled]="config.isNextPageDisabled()">
+        Next
+    </button>
+    <button type="button" (click)="lastClickHandler()" [disabled]="config.isLastPageDisabled()">
+        Last
+    </button>
+</div>

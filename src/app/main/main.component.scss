@@ -1,0 +1,19 @@
+.main-component-container {
+    .main-table-container {
+        table {
+            .main-table-id {
+                width: 12rem;
+            }
+            .main-table-name {
+                width: 8rem;
+            }
+            .main-table-trips {
+                width: 2rem;
+            }
+            .main-table-no-records-found {
+                text-align: center;
+                font-weight: 400;
+            }
+        }
+    }
+}

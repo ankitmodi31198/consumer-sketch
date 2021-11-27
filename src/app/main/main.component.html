@@ -1,0 +1,40 @@
+<div class="main-component-container">
+    <div class="main-table-container">
+        <ng-container *ngTemplateOutlet="dataTableTemplate ; context: {passengerData: passengerData}">
+        </ng-container>
+    </div>
+    <div class="main-pagination-container">
+        <app-pagination [config]="paginationConfig">
+        </app-pagination>
+    </div>
+</div>
+
+<ng-template #dataTableTemplate let-passengerData="passengerData">
+    <table>
+        <thead>
+            <tr>
+                <th class="main-table-id">ID</th>
+                <th class="main-table-name">Name</th>
+                <th class="main-table-trips">Trips</th>
+            </tr>
+        </thead>
+        <tbody>
+            <ng-container
+                *ngIf="(passengerData && passengerData.data && passengerData.data.length > 0) ; else noDataFoundTemplate">
+                <tr *ngFor="let eachData of passengerData.data; index as i">
+                    <td class="main-table-id">{{eachData._id}}</td>
+                    <td class="main-table-name">{{eachData.name}}</td>
+                    <td class="main-table-trips">{{eachData.trips}}</td>
+                </tr>
+            </ng-container>
+        </tbody>
+    </table>
+</ng-template>
+
+<ng-template #noDataFoundTemplate>
+    <tr class="main-table-no-records-found">
+        <td colspan="3">
+            No Records found
+        </td>
+    </tr>
+</ng-template>
